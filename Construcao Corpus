@@ -1,0 +1,72 @@
+# Aluno: Juliano Gaona Proença
+
+#Sua  tarefa  será  transformar  um  conjunto  de  5  sites,  sobre  o  tema  de  processamento  de 
+#linguagem natural em um conjunto de cinco listas distintas de sentenças. Ou seja, você fará uma função 
+#que, usando a biblioteca Beautifull Soap, faça a requisição de uma url, e extrai todas as sentenças desta 
+#url. Duas condições são importantes:  
+
+#a) A página web (url) deve apontar para uma página web em inglês contendo, não menos que 
+#1000 palavras.  
+
+#b) O texto desta página deverá ser transformado em um array de senteças.  
+ 
+#Para separar as sentenças você pode usar os sinais de pontuação ou as funções da biblibioteca 
+#Spacy. 
+
+import requests
+from bs4 import BeautifulSoup
+
+url1 = requests.get('https://www.cio.com/article/228501/natural-language-processing-nlp-explained.html')
+url2 = requests.get('https://monkeylearn.com/natural-language-processing/')
+url3 = requests.get('https://en.wikipedia.org/wiki/Natural_language_processing')
+url4 = requests.get('https://viso.ai/deep-learning/natural-language-processing/')
+url5 = requests.get('https://levity.ai/blog/how-natural-language-processing-works')
+
+print('1: ')
+pagina1 = BeautifulSoup(url1.text, "html.parser")
+thermPage1 = []
+for url1 in pagina1.find_all("p"):
+  thermPage1.append(url1.get_text())
+
+print(thermPage1)
+print('==========================================')
+
+print('2: ')
+pagina2 = BeautifulSoup(url2.text, "html.parser")
+thermPage2 = []
+for url2 in pagina1.find_all("p"):
+  thermPage2.append(url2.get_text())
+
+print(thermPage2)
+print('==========================================')
+
+print('3: ')
+pagina3 = BeautifulSoup(url3.text, "html.parser")
+thermPage3 = []
+for url3 in pagina3.find_all("p"):
+  thermPage3.append(url3.get_text())
+
+print(thermPage3)
+print('==========================================')
+
+print('4: ')
+pagina4 = BeautifulSoup(url4.text, "html.parser")
+thermPage4 = []
+for url4 in pagina4.find_all("p"):
+  thermPage4.append(url4.get_text())
+
+print(thermPage4)
+print('==========================================')
+
+print('5: ')
+pagina5 = BeautifulSoup(url5.text, "html.parser")
+thermPage5 = []
+for url5 in pagina5.find_all("p"):
+  thermPage5.append(url5.get_text())
+
+print(thermPage5)
+print('==========================================')
+
+
+
+
